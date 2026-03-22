@@ -1,6 +1,6 @@
 export const sendMessageToAPI = async (message) => {
   try {
-    const res = await fetch("https://devcoach-ai.onrender.com", {
+    const res = await fetch("https://devcoach-ai.onrender.com/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
