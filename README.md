@@ -1,14 +1,20 @@
-# Smart Parking Lot System
+#  DevCoach AI/ Frontend Interview Coach
 
 A modern AI-powered chatbot designed to simulate real frontend interviews and help developers prepare effectively.  
 This project focuses on **experience design + AI behavior**, making the chatbot feel like a real interviewer instead of a generic chat tool.
 
 
 ## Live Demo
-Live URL: [smartparkingsyste.netlify.app](https://smartparkingsyste.netlify.app/)
+Live URL: [DevCoach AI](https://devcoach-ai-hf8w.vercel.app/)
+
+
+
+<img width="1895" height="986" alt="Screenshot 2026-03-22 145602" src="https://github.com/user-attachments/assets/82df5271-1d93-45d0-a282-18a424165651" />
+
+
 
 ## GitHub Repository
-Repository: [smart-parking-system](https://github.com/harshtiwari2022/smart-parking-system)
+Repository: [ Frontend Interview Coach]( https://github.com/harshtiwari2022/devcoach-AI.git)
 
 
 ## Features
@@ -87,4 +93,4 @@ Repository: [smart-parking-system](https://github.com/harshtiwari2022/smart-park
 
 ## Demo Video
 
-Demo video link: [ Assignment video](https://docs.google.com/videos/d/1MQQtec479tdMem0zAXKlvhBZMfPlQxrwZIvFQeGb2WY/edit?usp=sharing)
+Demo video link: [ Assignment video](https://www.loom.com/share/b1026424de304ba79ce8f440ab4c3bc8)
