@@ -9,19 +9,22 @@ export default function Message({ msg }) {
         display: "flex",
         justifyContent: isUser ? "flex-end" : "flex-start",
         gap: "10px",
-        margin: "10px 0",
+        margin: "14px 0",
+        alignItems: "flex-end",
       }}
     >
+      {/* Bot Avatar */}
       {!isUser && <div style={styles.avatar}>🤖</div>}
 
       <div style={{ display: "flex", flexDirection: "column" }}>
+        
+        {/* Message Bubble */}
         <div
           style={{
             ...styles.bubble,
             ...(isUser ? styles.userBubble : styles.botBubble),
           }}
         >
-          {/* ✅ SAFE RENDER */}
           {msg.content ? (
             <ReactMarkdown>{msg.content}</ReactMarkdown>
           ) : (
@@ -29,6 +32,7 @@ export default function Message({ msg }) {
           )}
         </div>
 
+        {/* Timestamp */}
         <span style={styles.time}>
           {new Date().toLocaleTimeString([], {
             hour: "2-digit",
@@ -37,6 +41,7 @@ export default function Message({ msg }) {
         </span>
       </div>
 
+      {/* User Avatar */}
       {isUser && <div style={styles.userAvatar}>👤</div>}
     </div>
   );
@@ -50,24 +55,35 @@ const styles = {
     borderRadius: "16px",
     maxWidth: "65%",
     fontSize: "14px",
+    lineHeight: "1.5",
+    wordBreak: "break-word",
+    boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
   },
+
   userBubble: {
     background: `linear-gradient(135deg, ${gold}, #facc15)`,
     color: "black",
+    borderBottomRightRadius: "4px",
   },
+
   botBubble: {
     background: "#111",
     color: "#fff",
+    border: "1px solid #1f1f1f",
+    borderBottomLeftRadius: "4px",
   },
+
   avatar: {
     width: "34px",
     height: "34px",
     borderRadius: "50%",
-    background: "#111",
+    background: "#1a1a1a",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    fontSize: "16px",
   },
+
   userAvatar: {
     width: "34px",
     height: "34px",
@@ -76,10 +92,13 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    fontSize: "16px",
   },
+
   time: {
     fontSize: "10px",
-    color: "#888",
+    color: "#777",
     marginTop: "4px",
+    alignSelf: "flex-end",
   },
 };

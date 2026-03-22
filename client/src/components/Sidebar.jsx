@@ -4,28 +4,41 @@ export default function Sidebar({ onNewChat }) {
   const [active, setActive] = useState("mock");
 
   const menuItems = [
-    { id: "mock", label: "Mock Interview", icon: "🎯" },
-    { id: "concepts", label: "Concepts", icon: "📚" },
-    { id: "practice", label: "Practice", icon: "🧠" },
+    {
+      id: "mock",
+      label: "Mock Interview",
+      icon: "🎯",
+      desc: "Simulate real interviews",
+    },
+    {
+      id: "concepts",
+      label: "Concepts",
+      icon: "📚",
+      desc: "Revise core topics",
+    },
+    {
+      id: "practice",
+      label: "Practice",
+      icon: "🧠",
+      desc: "Solve questions",
+    },
   ];
 
   return (
     <div style={styles.sidebar}>
       
-      {/* 🔝 Logo */}
+      {/* Logo */}
       <div style={styles.logo}>
         🚀 DevCoach AI
+        <span style={styles.beta}>Beta</span>
       </div>
 
-      {/* ➕ New Chat (CONNECTED ✅) */}
-      <button
-        style={styles.newChat}
-        onClick={onNewChat}
-      >
+      {/* New Chat */}
+      <button style={styles.newChat} onClick={onNewChat}>
         + New Chat
       </button>
 
-      {/* 📌 Menu */}
+      {/* Menu */}
       <div style={styles.menu}>
         {menuItems.map((item) => {
           const isActive = active === item.id;
@@ -39,19 +52,25 @@ export default function Sidebar({ onNewChat }) {
                 ...(isActive && styles.activeItem),
               }}
             >
-              <span style={styles.icon}>{item.icon}</span>
-              {item.label}
+              <div>
+                <span style={styles.icon}>{item.icon}</span>
+              </div>
+
+              <div>
+                <div style={styles.label}>{item.label}</div>
+                <div style={styles.desc}>{item.desc}</div>
+              </div>
             </div>
           );
         })}
       </div>
 
-      {/* 👤 Profile */}
+      {/* Footer / Profile */}
       <div style={styles.profile}>
         <div style={styles.avatar}>👤</div>
         <div>
           <p style={styles.name}>Harsh</p>
-          <p style={styles.role}>Frontend Dev</p>
+          <p style={styles.role}>Frontend Developer</p>
         </div>
       </div>
     </div>
@@ -76,7 +95,16 @@ const styles = {
     fontSize: "18px",
     fontWeight: "600",
     marginBottom: "20px",
-    color: gold,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+
+  beta: {
+    fontSize: "10px",
+    background: "rgba(212,175,55,0.2)",
+    padding: "2px 6px",
+    borderRadius: "6px",
   },
 
   newChat: {
@@ -94,15 +122,14 @@ const styles = {
   menu: {
     display: "flex",
     flexDirection: "column",
-    gap: "6px",
+    gap: "8px",
   },
 
   menuItem: {
     padding: "10px",
-    borderRadius: "8px",
+    borderRadius: "10px",
     cursor: "pointer",
     display: "flex",
-    alignItems: "center",
     gap: "10px",
     color: "#ccc",
     transition: "all 0.2s ease",
@@ -116,7 +143,17 @@ const styles = {
   },
 
   icon: {
-    fontSize: "16px",
+    fontSize: "18px",
+  },
+
+  label: {
+    fontSize: "14px",
+    fontWeight: "500",
+  },
+
+  desc: {
+    fontSize: "11px",
+    color: "#888",
   },
 
   profile: {
